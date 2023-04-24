@@ -1,24 +1,47 @@
-# README
+# アプリケーション名
+asobiba
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+このアプリは、さまざまなスポーツやインドアアクティビティを楽しみたい人をつなげるプラットフォームです。ユーザーは自分の興味に合った施設やアクティビティを検索し、新しい出会いや交流を楽しむことができます。アプリ内では、チャットルームを作成し、参加者と共にアクティビティを計画することができます。
 
-Things you may want to cover:
+# URL
+(ここにURLを記載)
 
-* Ruby version
+# テスト用アカウント
+(ここにテスト用アカウント情報を記載)
 
-* System dependencies
+# 利用方法
+## 施設登録
+  1.トップページ（施設一覧ページ）からユーザーの新規登録を行う
+  2.施設登録ボタンから、施設の内容（施設の画像、施設名、施設の説明、施設の場所、）
+## 
+## 
+## 
+## 
 
-* Configuration
+# アプリケーションを作成した背景
+(ここに作成背景を記載)
 
-* Database creation
+# 洗い出した要件
+(ここに洗い出した要件を記載)
 
-* Database initialization
+# 実装した機能についての画像やGIFおよびその説明
+(ここに実装した機能の画像やGIF、説明を記載)
 
-* How to run the test suite
+# 実装予定の機能
+(ここに実装予定の機能を記載)
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース設計
+(ここにデータベース設計を記載)
 
-* Deployment instructions
+# 画面遷移図
+(ここに画面遷移図を記載)
 
-* ...
+# 開発環境
+(ここに開発環境を記載)
+
+# ローカルでの動作方法
+(ここにローカルでの動作方法を記載)
+
+# 工夫したポイント
+(ここに工夫したポイントを記載)
