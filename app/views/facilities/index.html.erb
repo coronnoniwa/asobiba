@@ -1,0 +1,95 @@
+<%= render "shared/header" %>
+<body>
+<div class="main">
+  <%= image_tag "cachcopy.png", class:"cachcopy" %>
+  <div class="asobiba-explain">
+    <div class="explain-theme">
+      asobibaって？
+    </div>
+    <div class="explain-sentence">
+      今日は何して遊ぼうかな？
+
+      そんな時は、このアプリを使って新しい出会いを楽しんでみませんか？
+      あなたがオススメしたい施設ってありませんか？このアプリでは、自分で施設を登録することができます！
+      好きなスポットを登録して、同じ趣味を持つ人とつながったり、新しい友達を作ったりしましょう。
+      スポーツ施設で熱い試合を楽しんだり、アミューズメント施設でドキドキわくわくしたり、カフェやレストランでおしゃべりしながら美味しいものを食べたり…。自分が興味のあることを見つけて、新しい出会いをたくさん楽しもう！
+      さらに、自分のお気に入りの施設を登録して、たくさんの人と交流することもできます。
+      このアプリで、普段の生活にちょっぴりスパイスを加えて、楽しい思い出をたくさん作りましょう！
+    </div>
+  </div>
+  <div class="download">
+    <%= image_tag "download_foto.png", class:"download-foto" %>
+    <%= link_to(image_tag("app-store.png", alt: "App Store"), "/",class: "app-store") %>
+    <%= link_to(image_tag("google-play.png", alt: "Google Play"), "/",class: "google-play") %>
+  </div>
+  <div class="steps">
+    <h2>かんたん３ステップ</h2>
+    <div class="step">
+      <%=image_tag "1ststep.png" %>
+      <h3><span class="highlight">施設</span>を登録する</h3>
+      <p>好きな施設、お気に入りの施設、使いたい施設を登録しよう！
+        他のユーザーにあなたの登録した場所が広がるチャンスも！</p>
+    </div>
+    <div class="step">
+      <%=image_tag "2ndstep.png" %>
+      <h3><span class="highlight">asobiba</span>を作る</h3>
+      <p>気になる施設や遊びを選んで、asobibaを作ろう！
+      同じ趣味を持つ人たちと出会い、新しい発見があるかも！</p>
+    </div>
+    <div class="step">
+      <%=image_tag "3rdstep.png" %>
+      <h3>asobibaで<span class="highlight">繋がる</span></h3>
+      <p>asobibaで出会った人たちと一緒に施設で遊ぼう！ 
+        新しい友達や思い出をつくろう！
+        　</p>
+    </div>
+  </div>
+  <div class="facility-theme">施設一覧</div>
+
+  <div class="facilities">
+    <%= link_to "show.html.erb", class: "facility-link" do %>
+      <div class="facility">
+        <%= image_tag "sample-facility.png", alt: "施設の写真1", class: "facility-image" %>
+        <div class="facility-info">
+          <p class="facility-name">施設名1</p>
+          <p class="facility-location">場所1</p>
+          <p class="facility-room-count">room数1</p>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "/", class: "facility-link" do %>
+      <div class="facility">
+        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
+        <div class="facility-info">
+          <p class="facility-name">施設名2</p>
+          <p class="facility-location">場所2</p>
+          <p class="facility-room-count">room数2</p>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "/", class: "facility-link" do %>
+      <div class="facility">
+        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
+        <div class="facility-info">
+          <p class="facility-name">施設名2</p>
+          <p class="facility-location">場所2</p>
+          <p class="facility-room-count">room数2</p>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to "/", class: "facility-link" do %>
+      <div class="facility">
+        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
+        <div class="facility-info">
+          <p class="facility-name">施設名2</p>
+          <p class="facility-location">場所2</p>
+          <p class="facility-room-count">room数2</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</body>
+<%= render "shared/footer" %>
+<a class="menu" href="show.html.erb">施設詳細ページ</a>
+

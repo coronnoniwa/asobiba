@@ -1,0 +1,194 @@
+/* body */
+.cachcopy{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+.asobiba-explain{
+  display: block;
+  margin: 0 160px;
+  max-width: 100%;
+}
+
+.asobiba-explain{
+  text-align: center;
+  margin: 41px 160px 130px 160px;
+}
+
+.explain-theme{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  margin-bottom: 30px;
+}
+
+.explain-sentence{
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  white-space: pre-line;
+}
+
+.download{
+  position: relative;
+}
+.download-foto{
+  width: 100vw;
+}
+
+.app-store, .google-play {
+  position: absolute;
+  right: 151px;
+  bottom: 34px;
+  margin: 0 0 36px;
+  width: 18vw; /* 画面幅の18%に設定 */
+  height: 5vh; /* 画面高さの5%に設定 */
+}
+
+
+.app-store {
+  right: calc(151px + 36px + 18vw); /* 元の位置から36pxと画像の幅（18vw）を追加 */
+}
+
+
+.google-play {
+  right: 151px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 48px 160px 76px;
+}
+
+.steps h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.step {
+  width: 320px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.step img {
+  max-width: 100%;
+  height: auto;
+}
+
+.step h3 {
+  margin: 20px 0;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 43px;
+  text-align: center;
+}
+
+.step p {
+  text-align: left;
+  white-space: pre-line;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.highlight {
+  color: #00BDC9;
+}
+
+.facility-theme{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+}
+
+.facilities {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 65px 60px 111px;
+  justify-content: center;
+  gap: 30px 96px; /* 1つ目の値が上下の間隔、2つ目の値が左右の間隔 */
+}
+
+.facility-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.facility {
+  width: 416px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid #c3c3c3;
+  border-radius: 10px;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.facility-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin: 0 -2px 0 -2px;
+}
+
+.facility-info {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: 10px;
+  width: calc(100% - 200px);
+  height: 100%;
+}
+
+.facility-name {
+  font-weight: bold;
+  color: #4A4A4A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 15ch;
+}
+
+.facility-location {
+  color: #4A4A4A;
+}
+
+.facility-room-count {
+  color: #4A4A4A;
+}
+
+/* body */
