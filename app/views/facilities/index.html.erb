@@ -19,8 +19,12 @@
   </div>
   <div class="download">
     <%= image_tag "download_foto.png", class:"download-foto" %>
-    <%= link_to(image_tag("app-store.png", alt: "App Store"), "/",class: "app-store") %>
-    <%= link_to(image_tag("google-play.png", alt: "Google Play"), "/",class: "google-play") %>
+    <%= link_to "/", class: "your-class" do %>
+      <%= image_tag("app-store.png", alt: "App Store", class: "app-store") %>
+    <% end %>
+    <%= link_to "/", class: "your-class" do %>
+      <%= image_tag("google-play.png", alt: "Google Play", class: "google-play") %>
+    <% end %>
   </div>
   <div class="steps">
     <h2>かんたん３ステップ</h2>
@@ -77,16 +81,17 @@
         </div>
       </div>
     <% end %>
-    <%= link_to "/", class: "facility-link" do %>
-      <div class="facility">
-        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
-        <div class="facility-info">
-          <p class="facility-name">施設名2</p>
-          <p class="facility-location">場所2</p>
-          <p class="facility-room-count">room数2</p>
+    <% @facilities.each do |facility| %>
+      <%= link_to "/", class: "facility-link" do %>
+        <div class="facility">
+          <%= image_tag facility.image,, alt: "施設の写真2", class: "facility-image" %>
+          <div class="facility-info">
+            <p class="facility-name"><%= facility.name %></p>
+            <p class="facility-location"><%= facility.prefecture.name %><%= facility.city.name %></p>
+            <p class="facility-room-count">room数2</p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
 </body>

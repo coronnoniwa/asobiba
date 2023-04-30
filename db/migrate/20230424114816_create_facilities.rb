@@ -6,6 +6,7 @@ class CreateFacilities < ActiveRecord::Migration[6.0]
       t.integer :city_id
       t.string :facility_link
       t.string :place_link
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

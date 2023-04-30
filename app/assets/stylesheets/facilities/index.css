@@ -45,19 +45,19 @@
   position: absolute;
   right: 151px;
   bottom: 34px;
-  margin: 0 0 36px;
-  width: 18vw; /* 画面幅の18%に設定 */
-  height: 5vh; /* 画面高さの5%に設定 */
+  margin: 0 0 -15px;
+  width: auto; /* 画面幅の18%に設定 */
+  height: 25%; /* 画面高さの5%に設定 */
 }
 
 
 .app-store {
-  right: calc(151px + 36px + 18vw); /* 元の位置から36pxと画像の幅（18vw）を追加 */
+  right: calc(10% + 36px + 18vw); /* 元の位置から36pxと画像の幅（18vw）を追加 */
 }
 
 
 .google-play {
-  right: 151px;
+  right: 10%;
 }
 
 .steps {

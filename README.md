@@ -45,3 +45,77 @@ asobiba
 
 # 工夫したポイント
 (ここに工夫したポイントを記載)
+
+# テーブル設計
+
+## usersテーブル
+
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| email              | string | null: false, unique: true |
+| password           | string | null: false               |
+| encrypted_password | string | null: false               |
+| nickname           | string | null: false               |
+
+### Association
+
+- has_many :rooms, through: :room_users
+- has_many :room_users
+- has_many :messages
+- has_many :facilities
+
+## facilitiesテーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city_id       | integer    | null: false                    |
+| facility_link | string     |                                |
+| place_link    | string     |                                |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :rooms
+
+## roomsテーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| event       | string     | null: false                    |
+| facility_id | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :facility
+- has_many :users, through: :room_users
+- has_many :room_users
+- has_many :messages
+
+## room_usersテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+## messagesテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| content| text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
