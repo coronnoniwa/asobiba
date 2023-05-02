@@ -8,6 +8,7 @@
   justify-content: space-between;
   background-color: #45CB53;
   box-sizing: border-box;
+  min-width: 850px;
 }
 
 .asobiba{
