@@ -82,16 +82,17 @@
       </div>
     <% end %>
     <% @facilities.each do |facility| %>
-      <%= link_to "/", class: "facility-link" do %>
+      <%= link_to facility_path(facility.id), class: "facility-link" do %>
         <div class="facility">
-          <%= image_tag facility.image,, alt: "施設の写真2", class: "facility-image" %>
+          <%= image_tag facility.image, alt: "施設の写真2", class: "facility-image" %>
           <div class="facility-info">
             <p class="facility-name"><%= facility.name %></p>
-            <p class="facility-location"><%= facility.prefecture.name %><%= facility.city.name %></p>
+            <p class="facility-location"><%= facility.prefecture.name %><%= facility.city %></p>
             <p class="facility-room-count">room数2</p>
           </div>
         </div>
       <% end %>
+    <% end %> 
   </div>
 </div>
 </body>
