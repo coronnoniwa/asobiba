@@ -69,8 +69,9 @@ asobiba
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | name          | string     | null: false                    |
+| explanation   | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
-| city_id       | integer    | null: false                    |
+| city          | string     |                                |
 | facility_link | string     |                                |
 | place_link    | string     |                                |
 | user          | references | null: false, foreign_key: true |
