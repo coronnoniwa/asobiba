@@ -1,2 +1,78 @@
 <%= render "shared/header" %>
+<div class="fash-main">
+  <div class = "fash-name">
+    <%= @facility.name%>
+  </div>
+  <div class="fash-info">
+    <div class="fash-image">
+      <%= image_tag @facility.image, class: "fash-image-tag"%>
+    </div>
+    <div class="fash-info-right">
+      <div class="fash-info-place">
+        <div class="fash-category">
+          場所
+        </div>
+        <div class="fash-content">
+          <%= @facility.prefecture.name %><%= @facility.city %>
+        </div>
+      </div>
+      <div class="fash-info-explanation">
+        <div class="fash-category">
+          説明
+        </div>
+        <div class="fash-content">
+          <%= @facility.explanation %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fash-links">
+    <div class="fash-link">
+      <div class="fash-category">
+        施設のリンク
+      </div>
+      <div class="fash-content">
+        <%= link_to @facility.facility_link, @facility.facility_link, target: '_blank' %>
+      </div>
+    </div>
+    <div class="fash-link">
+      <div class="fash-category">
+        場所のリンク
+      </div>
+      <div class="fash-content">
+        <%= link_to @facility.place_link, @facility.place_link, target: '_blank' %>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.id == @facility.user_id %>
+    <div class="fash-btn-contents">
+      <div class="fash-blue-box">
+        <%= link_to "施設を編集する", "#", class: "fash-btn" %>
+        <%# <%= link_to "施設を編集する", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+      </div>
+      <div class="fash-red-box">
+        <%= link_to "施設を削除する", "#", class:"fash-btn" %>
+        <%# <%= link_to "削除", item_path{@item.id}, method: :delete, class:"item-destroy" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="fash-aso-commands">
+    <div class="fash-index">
+      asobiba一覧
+    </div>
+    <div class="fash-green-box">
+      <%= link_to "asobibaを作成する", "#", class:"fash-btn" %>
+    </div>
+  </div>
+  <div class = fash-asobiba>
+    <p class="fash-asobiba-title">asobiba名</p>
+    <div class="fash-asobiba-left">
+      <p class="fash-asobiba-event">種目名</p>
+      <p class="fash-asobiba-count">参加者数</p>
+    </div>
+    <div class="fash-join">
+      <%= link_to "参加<br>する".html_safe, "#", class:"fash-join-btn" %>
+    </div>
+  </div>
+</div>
 <%= render "shared/footer" %>

@@ -1,0 +1,165 @@
+.fash-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 20vw;
+}
+/* 施設の情報 */
+.fash-name{
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+.fash-info, .fash-links{
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+.fash-image-tag{
+  width: 352px;
+  height: 352px;
+  margin-bottom: 29px;
+}
+.fash-category{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 29px;
+}
+.fash-content{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  min-width: 400px;
+  margin-bottom: 29px;
+}
+.fash-link{
+  width: 50%;
+}
+/* 施設の情報 */
+
+/* asobibaのアクション */
+.fash-btn-contents, .fash-aso-commands{
+  display: flex;
+  gap: 134px;
+  margin-top: 30px;
+}
+.fash-blue-box, .fash-red-box, .fash-green-box, .fash-index{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 244px;
+  height: 50px;
+  border-radius: 5px;
+}
+.fash-btn{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.fash-blue-box{
+  background-color: #00BDC9;
+}
+.fash-red-box{
+  background-color: #D93D3D;
+}
+.fash-green-box{
+  background-color: #45CB53;
+}
+.fash-index{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+}
+/* asobibaのアクション */
+/* asobiba */
+.fash-asobiba {
+  width: 256px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 59px;
+}
+
+.fash-asobiba-title {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.fash-asobiba-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: 0px; /* 左寄りに配置するために追加 */
+}
+
+.fash-asobiba-event {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  margin-bottom: 40px;
+}
+
+.fash-asobiba-count {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 29px;
+  position: absolute; /* 位置調整のために追加 */
+  bottom: 22px; /* 下の内線から22px離れるように設定 */
+  left: 16px;
+}
+
+.fash-join {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+}
+
+.fash-join-btn {
+  display: inline-block;
+  background-color: #45CB53;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  padding: 15px 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  white-space: nowrap;
+}
