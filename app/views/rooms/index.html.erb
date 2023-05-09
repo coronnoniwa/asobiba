@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+<div class="roin-main">
+  <div class="roin-top">
+    <div class="roin-title">
+      asobiba一覧
+    </div>
+    <div class="roin-serch">
+      <%= link_to "asobiba検索", "#", class: "roin-serch-text" %>
+    </div>
+  </div>
+  <div class = "roin-rooms">
+    <% @rooms.each do |room| %>
+      <div class="roin-room">
+        <div class="roin-room-header"><%= room.title%></div>
+        <div class="roin-room-left">
+          <div class="roin-facility">施設名</div>
+          <div class="roin-event">種目名</div>
+          <div class="roin-count">人数</div>
+        </div>
+        <div class="roin-room-right">
+          <div class="roin-facility"><%= room.facility.name%></div>
+          <div class="roin-event"><%= room.event.name %></div>
+          <div class="roin-count">人数</div>
+        </div>
+        <% button_class = case room.id % 4
+          when 0
+            "bg-green"
+          when 1
+            "bg-red"
+          when 2
+            "bg-blue"
+          when 3
+            "bg-yellow"
+          end
+        %>
+        <div class="roin-join">
+          <%= link_to "参加<br>する".html_safe, "#", class: "roin-join-btn #{button_class}" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>

@@ -69,3 +69,5 @@ gem 'image_processing', '~> 1.2'
 gem 'ancestry'
 
 gem 'active_hash'
+
+gem 'pry-rails'

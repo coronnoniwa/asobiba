@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #45CB53;
+  background: #F5F5F5;
   box-sizing: border-box;
 }
 
@@ -81,7 +81,7 @@
 
 .facilities-text {
   width: 90%;
-  padding: 16px 16px 8px;
+  padding: 8px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
   font-size: 16px;
@@ -132,18 +132,27 @@
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  width: 90%;
+  width: 416px;
   height: 50px;
   font-size: 14px;
-  margin-bottom: 4vh;
+  margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 .back-btn {
   background: #aaa;
   border: 1px solid #aaa;
   color: #fff;
-  padding: 15px 35%;
   text-decoration: none;
+  height: 50px;
+  width: 352px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 /* /下部ボタン */
