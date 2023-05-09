@@ -86,8 +86,8 @@ asobiba
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | title       | string     | null: false                    |
-| event       | string     | null: false                    |
-| facility_id | references | null: false, foreign_key: true |
+| event       | integer    | null: false                    |
+| facility    | references | null: false, foreign_key: true |
 
 ### Association
 

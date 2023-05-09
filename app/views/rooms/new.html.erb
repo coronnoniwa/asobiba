@@ -1,0 +1,52 @@
+<%= render "shared/header_second" %>
+<div class="rone-back">
+<%= form_with model: @room, url: rooms_path, class: 'rone-main', local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+    <%= f.hidden_field :facility_id, value: @facility.id %>
+    <div class="rone-title">
+      登録するasobibaの情報を入力
+    </div>
+    <div class="rone-in">
+      <div class="rone-info">
+        <div class="rone-category">
+          施設名
+        </div>
+        <div class="rone-facility">
+          <%= @facility.name%>
+        </div>
+      </div>
+      <div class="rone-info">
+        <div class="rone-category">
+          施設の場所
+        </div>
+        <div class="rone-facility">
+          <%= @facility.prefecture.name%><%= @facility.city%>
+        </div>
+      </div>
+      <div class="rone-info">
+        <div class="rone-category">
+          asobiba名
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="rone-facility">
+          <%= f.text_area :title, class:"rone-text", id:"facilities-name", placeholder:"asobiba名（必須 20文字まで)", rows:"1", maxlength:"20" %>
+        </div>
+      </div><div class="rone-info">
+        <div class="rone-category">
+          種目の選択
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="rone-facility">
+          <%= f.collection_select(:event_id, Event.all, :id, :name, {}, {class:"rone-select-box", id:"item-shipping-fee-status"}) %>
+        </div>
+      </div>
+      <%# 下部ボタン %>
+      <div class="register-btn-contents">
+        <%= f.submit "登録する" ,class:"register-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    </div>
+  <% end %>
+</div>
+<%= render "shared/footer" %>
