@@ -87,6 +87,11 @@
   margin-bottom: 16px;
 }
 
+.roin-facility{
+  width: 100%;
+  white-space: nowrap;
+}
+
 .roin-join {
   position: absolute;
   bottom: 20px;
