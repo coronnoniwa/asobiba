@@ -1,0 +1,20 @@
+<div class="message <%= current_user.id == message.user.id ? 'message-mine' : 'message-other' %>">
+  <div class="message-info">
+    <div class="message-user-date">
+      <div class="message-user">
+        <%= message.user.nickname %>
+      </div>
+      <div class="message-date">
+        <%= l message.created_at %>
+      </div>
+    </div>
+  </div>
+  <div class="lower-message">
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+    <% unless message.content.blank? %>
+      <div class="message-content">
+        <%= message.content %>
+      </div>
+    <% end %>
+  </div>
+</div>

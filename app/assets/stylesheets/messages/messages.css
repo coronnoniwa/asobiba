@@ -1,0 +1,73 @@
+.message {
+  position: relative;
+  margin: 20px 40px;
+  font-family: 'Noto Sans JP';
+}
+
+.message-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.message-user-date {
+  display: flex;
+  align-items: center;
+}
+
+.message-user {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #406795;
+  margin-right: 10px;
+}
+
+.message-date {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #8B8B8B;
+}
+.message-content {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 65%;
+  word-wrap: break-word;
+}
+.message-image {
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: cover;
+}
+.message-mine {
+  text-align: right;
+}
+
+.message-mine .message-content {
+  background-color: #45CB53;
+  margin-left: 40px;
+}
+
+.message-mine .message-info {
+  flex-direction: row-reverse;
+}
+
+.message-other {
+  text-align: left;
+}
+
+.message-other .message-content {
+  background-color: #ffffff;
+  margin-right: 40px;
+}

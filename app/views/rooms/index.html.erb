@@ -34,7 +34,7 @@
           end
         %>
         <div class="roin-join">
-          <%= link_to "参加<br>する".html_safe, "#", class: "roin-join-btn #{button_class}" %>
+          <%= link_to "参加<br>する".html_safe, room_messages_path(room), class: "roin-join-btn #{button_class}" %>
         </div>
       </div>
     <% end %>
