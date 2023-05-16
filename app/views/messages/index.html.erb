@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+
+<div class = "mein-main">
+  <div class = "mein-side">
+    <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="32223c64.3a01f924.32223c65.a65a77b3";rakuten_items="ranking";rakuten_genreId="0";rakuten_size="160x600";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ts="1683962065318";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+  </div>
+  <div class = "mein-center">
+    <div class="chat-header">
+      <div class="left-header">
+        <div class="header-title">
+          <%= @room.title%>
+        </div>
+      </div>
+      <%# <div class="right-header">
+        <div class="header-button">
+          <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+        <%# </div>
+      </div> %>
+    </div>
+    <div class="messages">
+      <%= render partial: 'message', collection: @messages %>
+    </div>
+    <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+      <div class="form-input">
+        <%= f.text_field :content, class: 'form-message', placeholder: 'メッセージを入力' %>
+        <label class="form-image">
+          <span class="image-file">画像</span>
+          <%= f.file_field :image, class: 'hidden-file-input' %>
+        </label>
+        <%= f.submit '送信', class: 'form-submit' %>
+      </div>
+    <% end %>
+  </div>
+  <div class = "mein-side">
+    <script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="32223c64.3a01f924.32223c65.a65a77b3";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="160x600";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="off";rakuten_ts="1683962093346";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js?20230106"></script>
+  </div>
+</div>

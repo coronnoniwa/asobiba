@@ -40,7 +40,6 @@
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
-  /* box-sizing: border-box; */
 }
 .roin-room {
   width: 480px;

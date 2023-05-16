@@ -51,36 +51,6 @@
   <div class="facility-theme">施設一覧</div>
 
   <div class="facilities">
-    <%= link_to "show.html.erb", class: "facility-link" do %>
-      <div class="facility">
-        <%= image_tag "sample-facility.png", alt: "施設の写真1", class: "facility-image" %>
-        <div class="facility-info">
-          <p class="facility-name">施設名1</p>
-          <p class="facility-location">場所1</p>
-          <p class="facility-room-count">room数1</p>
-        </div>
-      </div>
-    <% end %>
-    <%= link_to "/", class: "facility-link" do %>
-      <div class="facility">
-        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
-        <div class="facility-info">
-          <p class="facility-name">施設名2</p>
-          <p class="facility-location">場所2</p>
-          <p class="facility-room-count">room数2</p>
-        </div>
-      </div>
-    <% end %>
-    <%= link_to "/", class: "facility-link" do %>
-      <div class="facility">
-        <%= image_tag "sample-facility.png", alt: "施設の写真2", class: "facility-image" %>
-        <div class="facility-info">
-          <p class="facility-name">施設名2</p>
-          <p class="facility-location">場所2</p>
-          <p class="facility-room-count">room数2</p>
-        </div>
-      </div>
-    <% end %>
     <% @facilities.each do |facility| %>
       <%= link_to facility_path(facility.id), class: "facility-link" do %>
         <div class="facility">
@@ -88,7 +58,7 @@
           <div class="facility-info">
             <p class="facility-name"><%= facility.name %></p>
             <p class="facility-location"><%= facility.prefecture.name %><%= facility.city %></p>
-            <p class="facility-room-count">room数2</p>
+            <p class="facility-room-count">room数</p>
           </div>
         </div>
       <% end %>

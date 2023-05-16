@@ -64,18 +64,8 @@
       <%= link_to "asobibaを作成する", new_room_path(facility_id: @facility.id), class: "fash-btn" %>
     </div>
   </div>
-  <div class = "fash-asobiba">
-    <p class="fash-asobiba-title">asobiba名</p>
-    <div class="fash-asobiba-left">
-      <p class="fash-asobiba-event">種目名</p>
-      <p class="fash-asobiba-count">参加者数</p>
-    </div>
-    <div class="fash-join">
-      <%= link_to "参加<br>する".html_safe, "#", class:"fash-join-btn" %>
-    </div>
-  </div>
-  <% @rooms.each do |room| %>
-    <%# <%= link_to "#", do %>
+  <div class = "fash-rooms">
+    <% @rooms.each do |room| %>
       <div class="fash-asobiba">
           <p class="fash-asobiba-title"><%= room.title%></p>
         <div class="fash-asobiba-left">
@@ -83,10 +73,10 @@
           <p class="fash-asobiba-count">参加者数</p>
         </div>
         <div class="fash-join">
-          <%= link_to "参加<br>する".html_safe, "#", class:"fash-join-btn" %>
+          <%= link_to "参加<br>する".html_safe, room_messages_path(room), class:"fash-join-btn" %>
         </div>
       </div>
-    <%# <% end %>
-  <% end %> 
+    <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>

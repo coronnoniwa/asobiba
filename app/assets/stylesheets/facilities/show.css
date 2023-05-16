@@ -83,6 +83,13 @@
 }
 /* asobibaのアクション */
 /* asobiba */
+.fash-rooms{
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .fash-asobiba {
   width: 256px;
   height: 200px;
