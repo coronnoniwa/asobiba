@@ -48,7 +48,7 @@ Basic認証ID：admin
 
 # ローカルでの動作方法
 以下のコマンドを順に実行してください。
-% git clone http://github.com/asobiba
+% git clone http://github.com/coronnoniwa/asobiba
 % cd asobiba
 % bundle install
 % yarn install
