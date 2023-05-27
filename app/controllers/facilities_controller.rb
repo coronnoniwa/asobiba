@@ -1,4 +1,5 @@
 class FacilitiesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update]
   def index
     @facilities = Facility.all
   end

@@ -1,10 +1,10 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :set_facility, only: [:index, :new, :create]
 
   def index
     @facilities = Facility.all
     @rooms = Room.all
-    # .includes(:facility_id).all
   end
 
   def new
