@@ -41,7 +41,7 @@ http://18.204.31.60/
 # 実装した機能についての画像やGIFおよびその説明
 ## トップページ
 
-https://github.com/coronnoniwa/asobiba/assets/121328655/537d7297-c08c-4852-9e02-73f3e992eb88
+https://github.com/coronnoniwa/asobiba/assets/121328655/df717f47-ea08-4bb7-acda-50e5fe625d60
 
 ## 施設投稿機能
 
@@ -49,7 +49,9 @@ https://github.com/coronnoniwa/asobiba/assets/121328655/9455b363-9ca7-4c7f-b4b2-
 
 ## 施設詳細ページ
 
-https://github.com/coronnoniwa/asobiba/assets/121328655/797e44c0-9601-4acb-9d08-02c14bcc2353
+
+https://github.com/coronnoniwa/asobiba/assets/121328655/dc5b06f7-0482-4bb1-8416-5ee13e4c0136
+
 
 ## asobiba作成機能
 
@@ -57,7 +59,7 @@ https://github.com/coronnoniwa/asobiba/assets/121328655/80540ce2-573a-4474-bbe5-
 
 ## メッセージ投稿機能
 
-https://github.com/coronnoniwa/asobiba/assets/121328655/be3b9dd4-bd85-4b66-b13d-5c72dbf2bd6f
+https://github.com/coronnoniwa/asobiba/assets/121328655/68c0a17d-b609-4193-be7f-e1854d69d455
 
 # 実装予定の機能
   ・施設一覧のasobiba数表示機能
