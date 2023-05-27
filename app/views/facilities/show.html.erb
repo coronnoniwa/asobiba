@@ -70,7 +70,7 @@
           <p class="fash-asobiba-title"><%= room.title%></p>
         <div class="fash-asobiba-left">
           <p class="fash-asobiba-event"><%= room.event.name %></p>
-          <p class="fash-asobiba-count">参加者数</p>
+          <p class="fash-asobiba-count"><%= room.messages.count %>chat</p>
         </div>
         <div class="fash-join">
           <%= link_to "参加<br>する".html_safe, room_messages_path(room), class:"fash-join-btn" %>

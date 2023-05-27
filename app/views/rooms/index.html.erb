@@ -15,12 +15,12 @@
         <div class="roin-room-left">
           <div class="roin-facility">施設名</div>
           <div class="roin-event">種目名</div>
-          <div class="roin-count">人数</div>
+          <div class="roin-count">chat数</div>
         </div>
         <div class="roin-room-right">
           <div class="roin-facility"><%= room.facility.name%></div>
           <div class="roin-event"><%= room.event.name %></div>
-          <div class="roin-count">人数</div>
+          <div class="roin-count"><%= room.messages.count %>chat</div>
         </div>
         <% button_class = case room.id % 4
           when 0
