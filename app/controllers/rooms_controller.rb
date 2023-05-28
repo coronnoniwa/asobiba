@@ -1,19 +1,19 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
-  before_action :set_facility, only: [:index, :new, :create]
+  before_action :set_facility, only: [:new, :create]
 
   def index
+    @facility = Facility.find_by(id: params[:facility_id])
     @facilities = Facility.all
     @rooms = Room.all
   end
 
   def new
-    @facility = Facility.find(params[:facility_id])
     @room = Room.new
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = @facility.rooms.build(room_params)
     if @room.save
       redirect_to root_path
     else
@@ -37,9 +37,7 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:title, :event_id, :facility_id, user_ids: [])
   end
-  
-
   def set_facility
-    @facility = Facility.find_by(id: params[:facility_id])
+    @facility = Facility.find(params[:facility_id] || params[:room][:facility_id])
   end
 end
