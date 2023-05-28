@@ -1,5 +1,7 @@
 class FacilitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update]
+  before_action :set_facility, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @facilities = Facility.all
@@ -19,12 +21,10 @@ class FacilitiesController < ApplicationController
   end
 
   def show
-    @facility = Facility.find(params[:id])
     @rooms = @facility.rooms
   end
   
   def destroy
-    @facility = Facility.find(params[:id])
     if @facility.destroy
       flash[:notice] = "Facility was successfully deleted."
       redirect_to "#"
@@ -35,11 +35,9 @@ class FacilitiesController < ApplicationController
   end
 
   def edit
-    @facility = Facility.find(params[:id])
   end
 
   def update
-    @facility = Facility.find(params[:id])
     if @facility.update(facility_params)
       redirect_to facility_path(@facility)
     else
@@ -51,5 +49,13 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:name, :image, :explanation, :prefecture_id, :city, :facility_link, :place_link)
                                     .merge(user_id: current_user.id)
+  end
+
+  def set_facility
+    @facility = Facility.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index if current_user.id != @facility.user_id
   end
 end
