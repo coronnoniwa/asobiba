@@ -27,6 +27,12 @@ class RoomsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @facilities = Facility.all
+    @q = Room.includes(:facility).ransack(params[:q])
+    @rooms = @q.result(distinct: true)
+  end
+
   private
   def room_params
     params.require(:room).permit(:title, :event_id, :facility_id, user_ids: [])

@@ -18,7 +18,9 @@ class Prefecture < ActiveHash::Base
     { id: 46, name: '宮崎県' }, { id: 47, name: '鹿児島県' }, { id: 48, name: '沖縄県' },
     { id: 49, name: 'オンライン' },
   ]
-
+  def self.options
+    self.all.reject{ |e| e.id == 1 }
+  end
   include ActiveHash::Associations
   has_many :facilities
 end

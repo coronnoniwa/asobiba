@@ -67,8 +67,6 @@ https://github.com/coronnoniwa/asobiba/assets/121328655/68c0a17d-b609-4193-be7f-
   ・参加費の集金機能
   
   ・Googleマップの表示機能
-  
-  ・施設、asobiba検索機能
 
 # データベース設計
 ![B569D4DF-213C-4F30-ADDF-42CBD879CC09](https://github.com/coronnoniwa/asobiba/assets/121328655/13d72727-98c3-4ac5-b6a1-e281cdda0a73)

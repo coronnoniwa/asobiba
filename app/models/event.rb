@@ -13,7 +13,9 @@ class Event < ActiveHash::Base
     { id: 31, name: '音楽鑑賞' }, { id: 32, name: 'ゲーム' }, { id: 33, name: 'ボードゲーム' },
     { id: 34, name: 'リラクゼーション' }, { id: 35, name: '副業' }, { id: 36, name: 'その他' }
   ]
-
+  def self.options
+    self.all.reject{ |e| e.id == 1 }
+  end
   include ActiveHash::Associations
   has_many :rooms
 end

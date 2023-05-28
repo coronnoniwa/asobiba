@@ -8,4 +8,8 @@ class Room < ApplicationRecord
 
   validates :title, presence: true
   validates :event_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
+
+  def self.ransackable_associations(auth_object = nil)
+    %w(facility)
+  end
 end

@@ -4,10 +4,29 @@
     <div class="roin-title">
       asobiba一覧
     </div>
-    <div class="roin-serch">
-      <%= link_to "asobiba検索", search_rooms_path, class: "roin-serch-text" %>
-    </div>
+    <%# <div class="roin-serch"> %>
+      <%#<%= link_to "asobiba検索", search_facilities_path, class: "roin-serch-text" %>
+    <%# </div> %>
   </div>
+  <%= search_form_for @q, url: search_rooms_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :title_cont, 'asobiba名' %>
+      <br>
+      <%= f.search_field :title_cont, placeholder: 'asobiba名' %>
+    </div>
+    <div class="search-field">
+      <%= f.label :facility_prefecture_id_eq, '都道府県' %>
+      <br>
+      <%= f.collection_select(:facility_prefecture_id_eq, Prefecture.options, :id, :name, {include_blank: "---", class:"rone-select-box", id:"item-shipping-fee-status"}) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :event_id_eq, '種目名' %>
+      <br>
+      <%= f.collection_select(:event_id_eq, Event.options, :id, :name, {include_blank: "---", class:"rone-select-box", id:"item-shipping-fee-status"}) %>
+    </div>
+
+    <%= f.submit '検索' %>
+  <% end %>
   <div class = "roin-rooms">
     <% @rooms.each do |room| %>
       <div class="roin-room">
