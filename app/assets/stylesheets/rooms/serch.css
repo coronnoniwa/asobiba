@@ -1,0 +1,25 @@
+.rose-search{
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.rose-btn{
+  width: 100px;
+  height: 49px;
+  left: 816px;
+  top: 146px;
+  background: #45CB53;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 3px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+}
