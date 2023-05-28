@@ -4,7 +4,7 @@ class Facility < ApplicationRecord
   has_one_attached :image
   validates :image, presence: true
   belongs_to :prefecture
-  has_many :rooms
+  has_many :rooms, dependent: :destroy
 
   validates :name, presence: true
   validates :explanation, presence: true

@@ -48,11 +48,9 @@
     <div class="fash-btn-contents">
       <div class="fash-blue-box">
         <%= link_to "施設を編集する", "#", class: "fash-btn" %>
-        <%# <%= link_to "施設を編集する", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
       </div>
       <div class="fash-red-box">
-        <%= link_to "施設を削除する", "#", class:"fash-btn" %>
-        <%# <%= link_to "削除", item_path{@item.id}, method: :delete, class:"item-destroy" %>
+        <%= link_to "施設を削除する", facility_path(@facility), method: :delete, data: { confirm: '本当に削除しますか？' }, class:"fash-btn" %>
       </div>
     </div>
   <% end %>

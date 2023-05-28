@@ -1,5 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update]
+
   def index
     @facilities = Facility.all
   end
@@ -22,6 +23,16 @@ class FacilitiesController < ApplicationController
     @rooms = @facility.rooms
   end
   
+  def destroy
+    @facility = Facility.find(params[:id])
+    if @facility.destroy
+      flash[:notice] = "Facility was successfully deleted."
+      redirect_to "#"
+    else
+      flash[:alert] = "Failed to delete the facility."
+      render :show
+    end
+  end
   private
   def facility_params
     params.require(:facility).permit(:name, :image, :explanation, :prefecture_id, :city, :facility_link, :place_link)
