@@ -62,12 +62,6 @@ https://github.com/coronnoniwa/asobiba/assets/121328655/80540ce2-573a-4474-bbe5-
 https://github.com/coronnoniwa/asobiba/assets/121328655/68c0a17d-b609-4193-be7f-e1854d69d455
 
 # 実装予定の機能
-  ・施設一覧のasobiba数表示機能
-  
-  ・asobiba一覧のメッセージ数表示機能
-  
-  ・ユーザー情報、施設、asobibaの編集、削除機能
-  
   ・asobibaへの参加者制限機能
   
   ・参加費の集金機能

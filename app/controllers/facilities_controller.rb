@@ -33,6 +33,20 @@ class FacilitiesController < ApplicationController
       render :show
     end
   end
+
+  def edit
+    @facility = Facility.find(params[:id])
+  end
+
+  def update
+    @facility = Facility.find(params[:id])
+    if @facility.update(facility_params)
+      redirect_to facility_path(@facility)
+    else
+      render :edit
+    end
+  end
+
   private
   def facility_params
     params.require(:facility).permit(:name, :image, :explanation, :prefecture_id, :city, :facility_link, :place_link)

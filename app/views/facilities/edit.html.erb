@@ -1,0 +1,80 @@
+<%= render "shared/header_second" %>
+
+<div class="new-facility-body">
+  <div class="facilities-register-main">
+    <h2 class="facilities-register-title">登録する施設の情報を入力</h2>
+    <%= form_with(model: @facility, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# 施設画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        施設画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"facility-image" %>
+      </div>
+    </div>
+    <%# /施設画像 %>
+    <%# 施設名と施設説明 %>
+    <div class="new-facilities">
+      <div class="weight-bold-text">
+        施設名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"facilities-text", id:"facilities-name", placeholder:"施設名（必須 15文字まで)", rows:"1", maxlength:"15" %>
+      <div class="facilities-explain">
+        <div class="weight-bold-text">
+          施設の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"facilities-text", id:"facilities-info", placeholder:"施設の説明（必須 300文字まで）" ,rows:"10" ,maxlength:"300" %>
+      </div>
+    </div>
+    <%# /施設名と施設説明 %>
+
+    <%# 施設の場所 %>
+    <div class="facilities-place">
+      <div class="weight-bold-text">施設の場所</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          都道府県
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <div class="weight-bold-text">
+          市区町村
+          <%# <span class="indispensable">必須</span> %>
+        </div>
+        <%= f.text_area :city, class:"city-text", id:"facilities-name", placeholder:"市区町村", rows:"1", maxlength:"7" %>
+      </div>
+    </div>
+    <%# /施設の場所 %>
+
+    <%# 施設のリンクと場所のリンク %>
+    <div class="new-facilities">
+      <div class="weight-bold-text">
+        施設のリンク
+      </div>
+      <%= f.text_area :facility_link, class:"facilities-text", id:"facilities-info", placeholder:"施設のリンク（HP等）",rows:"3",  maxlength:"300" %>
+      <div class="weight-bold-text">
+        場所のリンク
+      </div>
+      <%= f.text_area :place_link, class:"facilities-text", id:"facilities-info", placeholder:"場所のリンク（マップ等）" ,rows:"3" ,maxlength:"300" %>
+    </div>
+    <%# /施設のリンクと場所のリンク %>
+
+    <%# 下部ボタン %>
+    <div class="register-btn-contents">
+      <%= f.submit "登録する" ,class:"register-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+    <% end %>
+  </div>
+</div>
