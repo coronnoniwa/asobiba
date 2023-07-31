@@ -40,4 +40,7 @@
     <% end %>
   </div>
 </div>
+<div class = "roin-page">
+  <%= will_paginate @rooms, renderer: WillPaginate::ActionView::LinkRenderer, previous_label: '&lt; 前へ', next_label: '次へ &gt;' %>
+</div>
 <%= render "shared/footer" %>

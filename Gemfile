@@ -86,3 +86,7 @@ gem 'ransack'
 gem 'dotenv-rails'
 # dotenv-railsは、Railsのアプリ内で環境変数を管理することを実現してくれるgemです。
 gem 'rails-i18n'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+# 表示件数をせっていする

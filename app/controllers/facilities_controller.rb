@@ -21,7 +21,7 @@ class FacilitiesController < ApplicationController
   end
 
   def show
-    @rooms = @facility.rooms
+    @rooms = @facility.rooms.paginate(page: params[:page], per_page: 10)
   end
   
   def destroy

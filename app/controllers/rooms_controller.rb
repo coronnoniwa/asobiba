@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
   def index
     @facility = Facility.find_by(id: params[:facility_id])
     @facilities = Facility.all
-    @rooms = Room.all
+    @rooms = Room.paginate(page: params[:page], per_page: 10)
   end
 
   def new
