@@ -82,3 +82,6 @@ gem "aws-sdk-s3", require: false
 gem 'mail', '2.7.1'
 
 gem 'ransack'
+
+gem 'dotenv-rails'
+# dotenv-railsは、Railsのアプリ内で環境変数を管理することを実現してくれるgemです。

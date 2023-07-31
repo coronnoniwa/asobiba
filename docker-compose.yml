@@ -1,0 +1,65 @@
+#docker-composeのバージョン
+version: '3'
+services:
+  db:
+    # 既存アプリとあわせる/ターミナルで[$ mysql --version]で確認
+    image: mysql:5.7
+    # 環境変数の設定/後述のdatabase.ymlの設定時に使用
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    # ポート番号を指定/[ローカル:コンテナ]
+    ports:
+      - "4306:3306"
+    # 名前付きボリュームでDBのデータを永続化
+    # [データボリューム名:コンテナ内のパス]
+    volumes:
+      - mysql_data:/etc/mysql/conf.d
+  web:
+    # Dockerfileのパスをカレントディレクトリに指定
+    build: .
+    # server.pidファイルを削除してからrailsサーバー起動
+    command: >
+      bash -c "sleep 10 &&
+      rm -f tmp/pids/server.pid &&
+      bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # 環境変数の設定
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PASSWORD=password
+      - DB_SOCKET=
+      - BASIC_AUTH_USER=${BASIC_AUTH_USER}
+      - BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASSWORD}
+    # ディレクトリのマウント
+    volumes:
+      - .:/asobiba
+    ports:
+      # ポート番号を指定/[ローカル:コンテナ]
+      - 3000:3000
+    # サービス間の依存関係を指定
+    # この場合、db → webの順でサービスを起動
+    depends_on:
+      - db
+    # コンテナを起動させ続けるための設定
+    # make container stay launched
+    tty: true
+    # stdinはstandard input（標準入力）の略
+    # コンテナの外から命令を送るための設定
+    stdin_open: true
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=password
+    links:
+      - db
+    ports:
+      - 8080:80
+    volumes:
+      - /sessions
+# 名前付きボリュームを使うときはトップレベルでもvolumesでデータボリューム名を定義する
+volumes:
+  # db:volumes:で作成したボリューム名を記述
+  mysql_data:

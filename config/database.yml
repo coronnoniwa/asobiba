@@ -1,27 +1,33 @@
 default: &default
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: <%= ENV['MYSQL_PASSWORD'] || '' %> # 記述箇所
+  # socket: /tmp/mysql.sock
+  host: <%= ENV['MYSQL_HOST'] || 'db' %> # 記述箇所
+  port: 3306
 
 development:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
+  # adapter: mysql2
+  # username: root
+  # password:
+  # host: localhost
   database: asobiba_development
 
 test:
   <<: *default
-  adapter: mysql2
-  username: root
-  password:
-  host: localhost
+  # adapter: mysql2
+  # username: root
+  # password:
+  # host: localhost
   database: asobiba_test
 
 production:
   <<: *default
-  adapter: mysql2
+  # adapter: mysql2
   database: asobiba_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  # socket: /var/lib/mysql/mysql.sock
