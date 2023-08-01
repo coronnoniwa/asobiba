@@ -322,7 +322,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-will_paginate
   byebug
-  capistrano
+  capistrano (~> 3.17.2)
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv
