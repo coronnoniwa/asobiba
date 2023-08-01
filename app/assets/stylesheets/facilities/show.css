@@ -40,6 +40,33 @@
 .fash-link{
   width: 50%;
 }
+.fash-weather{
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  display: flex;
+  padding: 20px 50px;
+  margin-bottom: 50px;
+}
+.fash-weather-title{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-right: 50px;
+}
+.fash-weather-title, .fash-weather-day, .fash-weather-tomorrow{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+.fash-weather-day, .fash-weather-tomorrow{
+  padding: 0px 20px;
+}
+
 /* 施設の情報 */
 
 /* asobibaのアクション */

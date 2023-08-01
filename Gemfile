@@ -90,3 +90,6 @@ gem 'rails-i18n'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 # 表示件数をせっていする
+
+gem 'httpclient'
+# ネットワーク通信を取り扱うライブラリ

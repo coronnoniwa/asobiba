@@ -26,6 +26,28 @@
       </div>
     </div>
   </div>
+  <% if @facility.prefecture.weather_id != "000000"%>
+    <div class="fash-weather">
+      <div class="fash-weather-title">
+        施設の天気
+      </div>
+      <div class="fash-weather-day">
+        <%= @todayWeather["dateLabel"]%>
+        <img src="<%= @todayWeather["image"]["url"] %>">
+        <%= @todayWeather["image"]["title"]%>
+      </div>
+      <div class="fash-weather-tomorrow">
+        <%= @tomorrowWeather["dateLabel"]%>
+        <img src="<%= @tomorrowWeather["image"]["url"] %>">
+        <%= @tomorrowWeather["image"]["title"]%>
+      </div>
+      <div class="fash-weather-day">
+        <%= @dayAfterTomorrowWeather["dateLabel"]%>
+        <img src="<%= @dayAfterTomorrowWeather["image"]["url"] %>">
+        <%= @dayAfterTomorrowWeather["image"]["title"]%>
+      </div>
+    </div>
+  <% end %>
   <div class="fash-links">
     <div class="fash-link">
       <div class="fash-category">
