@@ -1,4 +1,5 @@
 require "capistrano/setup"
+lock '3.17.3'
 require "capistrano/deploy"
 require 'capistrano/rbenv'
 require 'capistrano/bundler'
