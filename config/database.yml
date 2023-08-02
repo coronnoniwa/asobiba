@@ -27,7 +27,7 @@ test:
 production:
   <<: *default
   adapter: mysql2
-  host: 18.204.31.60
+  host: 172.31.81.150
   port: 3306
   database: asobiba_production
   username: appuser
