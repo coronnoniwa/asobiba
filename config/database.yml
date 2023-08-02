@@ -29,6 +29,6 @@ production:
   adapter: mysql2
   port: 3306
   database: asobiba_production
-  username: root
+  username: appuser
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
