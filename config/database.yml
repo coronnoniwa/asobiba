@@ -27,6 +27,8 @@ test:
 production:
   <<: *default
   # adapter: mysql2
+  host: <%= ENV['MYSQL_HOST'] || 'db' %>
+  port: 3306
   database: asobiba_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
