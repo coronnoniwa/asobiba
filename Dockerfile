@@ -1,6 +1,9 @@
 # 使用するイメージとバージョンを指定/Gemfileに記載されているバージョンに合わせる
 FROM ruby:2.6.5
 
+# RubyGemsを最新のバージョンに更新
+# 1RUN gem update --system 3.2.3
+
 # yarnのインストール
 # 使われているコマンドは主要なLinuxディストリビューションの1つであるUbuntuというOSのもの（簡単にいうとLinuxの流派の1つ）
 # 参考：https://classic.yarnpkg.com/en/docs/install/#debian-stable（yarn公式サイト）
@@ -37,6 +40,7 @@ COPY . .
 
 # yarnをインストール
 RUN yarn install 
+RUN yarn install --check-files
 
 # entrypoint.shをコンテナの/usr/bin/にコピー
 COPY entrypoint.sh /usr/bin/
@@ -51,3 +55,5 @@ EXPOSE 3000
 
 # イメージ実行時に起動させる主プロセスを設定
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+#1 RUN gem install bundler -v '2.4.18'

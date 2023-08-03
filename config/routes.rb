@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   root to: 'facilities#index'
   resources :facilities, only: [:index, :new, :create, :show, :destroy, :edit, :update]
   resources :rooms, only: [:index, :new, :create, :destroy] do

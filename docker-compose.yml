@@ -7,6 +7,7 @@ services:
     # 環境変数の設定/後述のdatabase.ymlの設定時に使用
     environment:
       MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
       MYSQL_DATABASE: root
     # ポート番号を指定/[ローカル:コンテナ]
     ports:
