@@ -1,6 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update]
-  before_action :set_facility, only: [:show, :edit, :update, :destroy]
+  before_action :set_facility, only: [:show, :edit, :update, :destroy, :room_list_page]
   before_action :move_to_index, only: [:edit, :destroy]
   require 'httpclient'
 
@@ -22,18 +22,16 @@ class FacilitiesController < ApplicationController
   end
 
   def show
-    @rooms = @facility.rooms.paginate(page: params[:page], per_page: 10)
-    if @facility.prefecture.weather_id != "000000"
-      client    = HTTPClient.new
-      url       = "https://weather.tsukumijima.net/api/forecast/city/#{@facility.prefecture.weather_id}"
-      response  = client.get(url)
-      res_json  = JSON.parse(response.body)
-      print res_json
-      weather = res_json["forecasts"]
-      @todayWeather = weather[0]
-      @tomorrowWeather = weather[1]
-      @dayAfterTomorrowWeather = weather[2]
-    end
+    @page = 5
+    @rooms = @facility.rooms.paginate(page: params[:page], per_page: @page)
+    set_weather
+  end
+
+  def room_list_page
+    @page = params[:per]
+    @rooms = @facility.rooms.paginate(page: params[:page], per_page: @page)
+    set_weather
+    render("show")
   end
   
   def destroy
@@ -69,5 +67,19 @@ class FacilitiesController < ApplicationController
 
   def move_to_index
     redirect_to action: :index if current_user.id != @facility.user_id
+  end
+
+  def set_weather
+    if @facility.prefecture.weather_id != "000000"
+      client    = HTTPClient.new
+      url       = "https://weather.tsukumijima.net/api/forecast/city/#{@facility.prefecture.weather_id}"
+      response  = client.get(url)
+      res_json  = JSON.parse(response.body)
+      print res_json
+      weather = res_json["forecasts"]
+      @todayWeather = weather[0]
+      @tomorrowWeather = weather[1]
+      @dayAfterTomorrowWeather = weather[2]
+    end
   end
 end

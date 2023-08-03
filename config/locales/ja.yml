@@ -9,3 +9,5 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  will_paginate:
+    page_gap: …

@@ -5,7 +5,14 @@ class RoomsController < ApplicationController
   def index
     @facility = Facility.find_by(id: params[:facility_id])
     @facilities = Facility.all
-    @rooms = Room.paginate(page: params[:page], per_page: 10)
+    @page = 5
+    @rooms = Room.paginate(page: params[:page], per_page: @page)
+  end
+
+  def room_list_page
+    @page = params[:per]
+    @rooms = Room.paginate(page: params[:page], per_page: @page)
+    render("index")
   end
 
   def new

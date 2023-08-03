@@ -84,6 +84,19 @@
       <%= link_to "asobibaを作成する", new_room_path(facility_id: @facility.id), class: "fash-btn" %>
     </div>
   </div>
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <%= @page %>
+      <label>件表示中</label>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><%= link_to("3", room_list_facility_path(@facility, per: 3)) %></li>
+      <li><%= link_to("5", room_list_facility_path(@facility, per: 5)) %></li>
+      <li><%= link_to("10", room_list_facility_path(@facility, per: 10)) %></li>
+      <li><%= link_to("20", room_list_facility_path(@facility, per: 20)) %></li>
+    </ul>
+  </div>
   <div class = "fash-rooms">
     <% @rooms.each do |room| %>
       <div class="fash-asobiba">
