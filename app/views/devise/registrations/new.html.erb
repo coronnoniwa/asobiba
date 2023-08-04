@@ -1,5 +1,5 @@
 <%= render "shared/header_second" %>
-<%= form_with model: @user, url: user_registration_path, method: :post, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, html: { novalidate: true }, url: user_registration_path, method: :post, class: 'registration-main', local: true do |f| %>
 
 <div class='form-wrap'>
   <div class='form-header'>
