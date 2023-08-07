@@ -1,16 +1,17 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :set_facility, only: [:new, :create]
+  before_action :set_page, only: [:index, :room_list_page]
 
   def index
     @facility = Facility.find_by(id: params[:facility_id])
     @facilities = Facility.all
-    @page = 5
     @rooms = Room.paginate(page: params[:page], per_page: @page)
   end
 
   def room_list_page
     @page = params[:per]
+    session[:per_page] = @page
     @rooms = Room.paginate(page: params[:page], per_page: @page)
     render("index")
   end
@@ -46,5 +47,8 @@ class RoomsController < ApplicationController
   end
   def set_facility
     @facility = Facility.find(params[:facility_id] || params[:room][:facility_id])
+  end
+  def set_page
+    @page = session[:per_page] || 5
   end
 end

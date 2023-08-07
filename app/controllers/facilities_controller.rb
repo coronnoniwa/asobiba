@@ -2,6 +2,7 @@ class FacilitiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update]
   before_action :set_facility, only: [:show, :edit, :update, :destroy, :room_list_page]
   before_action :move_to_index, only: [:edit, :destroy]
+  before_action :set_page, only: [:show, :room_list_page]
   require 'httpclient'
 
   def index
@@ -22,13 +23,13 @@ class FacilitiesController < ApplicationController
   end
 
   def show
-    @page = 5
     @rooms = @facility.rooms.paginate(page: params[:page], per_page: @page)
     set_weather
   end
 
   def room_list_page
     @page = params[:per]
+    session[:per_page] = @page
     @rooms = @facility.rooms.paginate(page: params[:page], per_page: @page)
     set_weather
     render("show")
@@ -81,5 +82,9 @@ class FacilitiesController < ApplicationController
       @tomorrowWeather = weather[1]
       @dayAfterTomorrowWeather = weather[2]
     end
+  end
+
+  def set_page
+    @page = session[:per_page] || 5
   end
 end
