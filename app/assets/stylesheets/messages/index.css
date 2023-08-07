@@ -40,10 +40,6 @@
   margin: 0 5%;
   border: 1px solid #CCCCCC;
 }
-.hidden-file-input {
-  display: none;
-  background-color: #45CB53;
-}
 
 .form-image, .form-submit {
   height: 40px;
@@ -57,19 +53,17 @@
   color: #ffffff;
   display: flex;
   justify-content: center;
-}
-.form-submit{
-  margin-left: 15px;
-  margin-right: 5%;
-}
-.image-file, .form-submit{
-  position: relative;
   z-index: 1;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
 }
+.form-submit{
+  margin-left: 15px;
+  margin-right: 5%;
+}
+
 .field_with_errors {
   display: contents;
 }
